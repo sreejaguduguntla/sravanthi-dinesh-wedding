@@ -751,19 +751,31 @@ body {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
+  height: clamp(420px, 65vh, 640px);
 }
 
 .gallery-item {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  aspect-ratio: 4/5;
   background: var(--blush);
   cursor: pointer;
+}
+
+/* Large left photo — spans both rows */
+.gallery-item.gallery-main {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+/* Top-right and bottom-right auto-placed */
+.gallery-item:not(.gallery-main) {
+  grid-column: 2;
 }
 
 .gallery-item.large {
