@@ -1662,12 +1662,29 @@ body.intro-active { overflow: hidden; }
   align-items: center;
   justify-content: center;
   gap: clamp(20px, 3.5vh, 40px);
-  background:
-    repeating-linear-gradient(45deg,  transparent, transparent 50px, rgba(201,169,110,0.018) 50px, rgba(201,169,110,0.018) 51px),
-    repeating-linear-gradient(-45deg, transparent, transparent 50px, rgba(201,169,110,0.018) 50px, rgba(201,169,110,0.018) 51px),
-    radial-gradient(ellipse at 50% 42%, #7c2030 0%, #3d0d10 48%, #110204 100%);
+  background: #110204;
   padding: 40px 24px;
   overflow: hidden;
+}
+
+/* ---- Couple photo background ---- */
+.intro-photo-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.intro-photo-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.7) brightness(0.45);
+}
+.intro-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(60,8,16,0.3) 0%, rgba(10,2,4,0.82) 100%);
 }
 
 /* ---- Stars ---- */
@@ -1904,4 +1921,146 @@ body.intro-active { overflow: hidden; }
   .intro-pretext,
   .intro-divider,
   .intro-invite-line   { display: none; }
+}
+
+/* ===== COMPREHENSIVE MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  /* Events grid: 1 column */
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 4px;
+  }
+
+  .event-card {
+    padding: 28px 20px;
+  }
+
+  .event-card.featured {
+    padding: 32px 20px;
+  }
+
+  /* Team section: stack vertically */
+  .team-arena {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 340px;
+    padding: 32px 20px;
+  }
+
+  .team-vs {
+    flex-direction: row;
+    transform: rotate(90deg);
+  }
+
+  /* Hero section */
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .name-bride, .name-groom {
+    font-size: clamp(2.8rem, 13vw, 4.5rem);
+  }
+
+  /* Section headings */
+  .section-heading {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+  }
+
+  /* Couple section */
+  .couple-avatar {
+    width: 160px;
+    height: 160px;
+  }
+
+  /* Score bar */
+  .score-bar-wrap {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  /* Map button full width */
+  .map-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Dress code badge */
+  .dress-code-badge {
+    font-size: 0.75rem;
+  }
+
+  /* Footer */
+  .footer-names {
+    font-size: clamp(1.6rem, 7vw, 2.5rem);
+  }
+
+  /* Countdown */
+  .countdown-num {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+  }
+
+  /* Welcome section */
+  .welcome-text {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  }
+
+  /* Sections padding */
+  .events-section,
+  .couple-section,
+  .gallery-section,
+  .team-section,
+  .welcome-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Gallery: single column */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item.large {
+    grid-column: span 1;
+    aspect-ratio: 4/3;
+  }
+
+  /* Hero names smaller */
+  .name-bride, .name-groom {
+    font-size: clamp(2.4rem, 12vw, 3.5rem);
+  }
+
+  .hero-cta {
+    font-size: 0.8rem;
+    padding: 12px 24px;
+  }
+
+  /* Intro page */
+  .intro-name-bride { font-size: clamp(3rem, 13vw, 4rem); }
+  .intro-name-groom { font-size: clamp(2.5rem, 11vw, 3.4rem); }
+
+  .env-open-btn {
+    padding: 13px 28px;
+    font-size: 0.85rem;
+  }
+
+  /* Team card full width */
+  .team-card {
+    width: calc(100vw - 40px);
+  }
+
+  /* Couple cards */
+  .couple-card {
+    padding: 28px 16px;
+  }
 }

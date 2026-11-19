@@ -281,8 +281,7 @@ function tearEnvelope() {
   cta.style.opacity = '0';
   cta.style.transition = 'opacity 0.3s ease';
 
-  // Particle burst + music
-  burstParticles();
+  // Start music
   startMusic();
 
   // Zoom + fade out the whole intro
