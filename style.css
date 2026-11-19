@@ -1427,6 +1427,81 @@ body {
 
 /* ===== FOOTER ===== */
 
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  padding: var(--section-pad) clamp(16px, 5vw, 80px);
+  background: var(--gradient-warm);
+  text-align: center;
+}
+
+.contact-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-heading {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--rose-deep);
+  margin: 8px 0 6px;
+}
+
+.contact-subtext {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  letter-spacing: 0.05em;
+  margin-bottom: 36px;
+}
+
+.contact-cards {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid rgba(247, 214, 208, 0.8);
+  border-radius: 20px;
+  padding: 28px 36px;
+  text-decoration: none;
+  box-shadow: 0 6px 30px rgba(158, 45, 58, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(158, 45, 58, 0.15);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.contact-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--rose-deep);
+  letter-spacing: 0.03em;
+}
+
+.contact-number {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gold-dark, #a07830);
+  letter-spacing: 0.05em;
+}
+
 .footer {
   background: var(--text-dark);
   text-align: center;
