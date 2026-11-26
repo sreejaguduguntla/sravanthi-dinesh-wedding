@@ -1093,16 +1093,7 @@ body {
 
 .jharokha-parents strong { color: var(--text-dark); font-style: normal; }
 
-.jharokha-blessing {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
-  font-style: italic;
-  color: var(--text-light);
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px dashed rgba(192,144,48,0.3);
-  line-height: 1.6;
-}
+.jharokha-blessing {\n  font-family: 'Cormorant Garamond', serif;\n  font-size: 13px;\n  font-style: italic;\n  color: var(--text-light);\n  margin-top: 10px;\n  padding-top: 10px;\n  border-top: 1px dashed rgba(192,144,48,0.3);\n  line-height: 1.6;\n}\n\n.family-photo-wrap {\n  margin: 14px -22px 0;\n  overflow: hidden;\n  border-radius: 0 0 16px 16px;\n  position: relative;\n}\n.family-photo-wrap img {\n  width: 100%;\n  height: 200px;\n  object-fit: cover;\n  object-position: center top;\n  display: block;\n}\n.family-photo-label {\n  position: absolute;\n  bottom: 0; left: 0; right: 0;\n  background: linear-gradient(to top, rgba(60,10,20,0.75), transparent);\n  color: #fff;\n  font-family: 'Cormorant Garamond', serif;\n  font-size: 13px;\n  font-style: italic;\n  padding: 16px 12px 8px;\n  text-align: center;\n}
 
 
 /* ============================================
@@ -1273,6 +1264,110 @@ body {
   font-weight: 400;
 }
 
+
+/* ============================================
+   POLL SECTION
+   ============================================ */
+.poll-section {
+  padding: 48px 20px 36px;
+  text-align: center;
+}
+.poll-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 28px 0 20px;
+  flex-wrap: nowrap;
+}
+.poll-card {
+  flex: 1;
+  max-width: 150px;
+  border-radius: 20px;
+  padding: 22px 14px 18px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.poll-card:active { transform: scale(0.96); }
+.bride-poll {
+  background: linear-gradient(145deg, #FFF0F4, #FFD6E0);
+  border: 2px solid rgba(155,18,48,0.25);
+  box-shadow: 0 4px 20px rgba(155,18,48,0.12);
+}
+.groom-poll {
+  background: linear-gradient(145deg, #EEF2FF, #D6E0FF);
+  border: 2px solid rgba(37,53,160,0.25);
+  box-shadow: 0 4px 20px rgba(37,53,160,0.12);
+}
+.poll-card.voted {
+  transform: scale(1.04);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+}
+.poll-emoji { font-size: 36px; margin-bottom: 6px; }
+.poll-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  opacity: 0.65;
+}
+.bride-poll .poll-label { color: var(--crimson); }
+.groom-poll .poll-label { color: #2535A0; }
+.poll-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+.bride-poll .poll-name { color: var(--crimson); }
+.groom-poll .poll-name { color: #2535A0; }
+.poll-bar-wrap {
+  width: 100%;
+  height: 6px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.poll-bar {
+  height: 100%;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.6s cubic-bezier(.4,0,.2,1);
+}
+.bride-bar { background: linear-gradient(90deg, #E06080, var(--crimson)); }
+.groom-bar { background: linear-gradient(90deg, #5570D0, #2535A0); }
+.poll-pct {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.bride-poll .poll-pct { color: var(--crimson); }
+.groom-poll .poll-pct { color: #2535A0; }
+.poll-vs {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 2px;
+  flex-shrink: 0;
+  background: var(--warm-bg);
+  border: 2px solid var(--border-gold);
+  border-radius: 50%;
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+}
+.poll-total {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
 
 /* ============================================
    CLOSING SECTION
@@ -1713,7 +1808,7 @@ body {
         <span class="groom-name">Dinesh</span>
       </div>
 
-      <div class="hero-title-note">Sravanthi Koolla &nbsp;·&nbsp; Major Dinesh Mote</div>
+      <div class="hero-title-note">Sravanthi Koolla &nbsp;·&nbsp; Dinesh Mote</div>
 
       <div class="hero-date-pill">
         📅 &nbsp;Thursday, 3rd December 2026
@@ -1766,11 +1861,11 @@ body {
       <!-- Groom -->
       <div class="person-card reveal">
         <div class="person-avatar photo-avatar">
-          <img src="photo8-groom-swing.jpg" alt="Major Dinesh Mote">
+          <img src="photo8-groom-swing.jpg" alt="Dinesh Mote">
         </div>
         <div class="person-role">The Groom</div>
-        <div class="person-name">Major Dinesh</div>
-        <div class="person-qual">Chi. Major Dinesh Mote</div>
+        <div class="person-name">Dinesh</div>
+        <div class="person-qual">Chi. Dinesh Mote</div>
         <div class="person-family">
           Son of<br>
           <strong>Smt. Padma Mote</strong><br>
@@ -1838,6 +1933,7 @@ body {
           <div class="tl-sub-label">Groom's Haldi</div>
           <div class="tl-time">🕗 8:00 AM onwards</div>
           <div class="tl-venue">Jains Balaji Nilayam<br>Casa Waterside</div>
+          <a href="https://maps.app.goo.gl/vPoqeL5BR5CvtAN27" target="_blank" class="dir-btn">📍 Get Directions</a>
         </div>
       </div>
 
@@ -1849,6 +1945,7 @@ body {
           <div class="tl-sub-label">Groom's Ceremony</div>
           <div class="tl-time">🕐 1:00 PM onwards</div>
           <div class="tl-venue">Jains Balaji Nilayam<br>Casa Waterside</div>
+          <a href="https://maps.app.goo.gl/vPoqeL5BR5CvtAN27" target="_blank" class="dir-btn">📍 Get Directions</a>
         </div>
       </div>
 
@@ -1913,7 +2010,7 @@ body {
           <div class="tl-sub-label">Wedding Ceremony</div>
           <div class="tl-time">🕗 8:21 PM &nbsp;·&nbsp; Mithuna Lagna</div>
           <div class="tl-venue">KBR Convention<br>LB Nagar, Hyderabad</div>
-          <a href="https://maps.google.com/?q=17.343039,78.566750" target="_blank" class="dir-btn">📍 Get Directions</a>
+          <a href="https://maps.app.goo.gl/2uA6rGsqHw9mQbWV8" target="_blank" class="dir-btn">📍 Get Directions</a>
         </div>
       </div>
 
@@ -1942,6 +2039,10 @@ body {
           With the blessings of<br>
           Smt. Koolla Bharathi &amp; Late Rama Narsaiah
         </div>
+        <div class="family-photo-wrap">
+          <img src="family-koolla.jpg" alt="Koolla Family">
+          <div class="family-photo-label">The Koolla Family ✨</div>
+        </div>
       </div>
 
       <!-- Groom's Family -->
@@ -1952,6 +2053,10 @@ body {
         <div class="jharokha-parents">
           <strong>Smt. Padma Mote</strong><br>
           <strong>Shri. Satyanarayan Mote</strong>
+        </div>
+        <div class="family-photo-wrap">
+          <img src="family-mote.jpg" alt="Mote Family">
+          <div class="family-photo-label">The Mote Family ✨</div>
         </div>
       </div>
 
@@ -1972,12 +2077,12 @@ body {
       <div class="venue-address">Mansoorabad, LB Nagar, Hyderabad</div>
       <div class="venue-dt-chip">📅 Thu, 3rd Dec 2026 · 🕗 8:21 PM</div>
       <div class="venue-btns">
-        <a href="https://maps.google.com/?q=17.343039,78.566750" target="_blank" class="btn-filled">📍 Get Directions</a>
-        <a href="https://maps.google.com/?q=17.343039,78.566750" target="_blank" class="btn-outline">🗺️ Open Maps</a>
+        <a href="https://maps.app.goo.gl/2uA6rGsqHw9mQbWV8" target="_blank" class="btn-filled">📍 Get Directions</a>
+        <a href="https://maps.app.goo.gl/2uA6rGsqHw9mQbWV8" target="_blank" class="btn-outline">🗺️ Open Maps</a>
       </div>
       <iframe
         class="map-frame"
-        src="https://maps.google.com/maps?q=17.343039,78.566750&z=16&output=embed"
+        src="https://maps.google.com/maps?q=17.372222,78.541389&z=16&output=embed"
         loading="lazy"
         allowfullscreen
         title="KBR Convention Location">
@@ -2070,6 +2175,40 @@ body {
         <div class="polaroid-caption">The Groom 🤵</div>
       </div>
     </div>
+  </section>
+
+
+  <!-- ===== TEAM POLL ===== -->
+  <section class="section poll-section reveal">
+    <div class="section-pill">· Join the Fun ·</div>
+    <h2 class="section-title">Pick Your Team!</h2>
+    <p class="section-subtitle">Who are you rooting for? 😄</p>
+
+    <div class="poll-cards">
+      <div class="poll-card bride-poll" id="poll-bride" onclick="vote('bride')">
+        <div class="poll-emoji">👰</div>
+        <div class="poll-label">Team Bride</div>
+        <div class="poll-name">Sravanthi</div>
+        <div class="poll-bar-wrap">
+          <div class="poll-bar bride-bar" id="bar-bride"></div>
+        </div>
+        <div class="poll-pct" id="pct-bride">0%</div>
+      </div>
+
+      <div class="poll-vs">VS</div>
+
+      <div class="poll-card groom-poll" id="poll-groom" onclick="vote('groom')">
+        <div class="poll-emoji">🤵</div>
+        <div class="poll-label">Team Groom</div>
+        <div class="poll-name">Dinesh</div>
+        <div class="poll-bar-wrap">
+          <div class="poll-bar groom-bar" id="bar-groom"></div>
+        </div>
+        <div class="poll-pct" id="pct-groom">0%</div>
+      </div>
+    </div>
+
+    <div class="poll-total" id="poll-total">Be the first to vote! 🎉</div>
   </section>
 
 
@@ -2328,6 +2467,49 @@ function initScrollReveal() {
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
 }
+
+/* ---- TEAM POLL ---- */
+(function() {
+  var votes = JSON.parse(localStorage.getItem('weddingPoll') || '{"bride":0,"groom":0}');
+  updatePollUI();
+
+  window.vote = function(side) {
+    var already = localStorage.getItem('weddingVoted');
+    if (already) {
+      // allow switching vote
+      var prev = already;
+      votes[prev] = Math.max(0, votes[prev] - 1);
+    }
+    votes[side]++;
+    localStorage.setItem('weddingVoted', side);
+    localStorage.setItem('weddingPoll', JSON.stringify(votes));
+    updatePollUI();
+    // celebrate
+    var colors = side === 'bride' ? ['#9B1230','#FFB6C1','#C09030'] : ['#2535A0','#B6C6FF','#C09030'];
+    if (typeof confetti !== 'undefined') {
+      confetti({ particleCount: 60, spread: 60, colors: colors, origin: { y: 0.6 } });
+    }
+    document.getElementById('poll-' + side).classList.add('voted');
+  };
+
+  function updatePollUI() {
+    var total = votes.bride + votes.groom;
+    var bPct = total ? Math.round(votes.bride / total * 100) : 50;
+    var gPct = total ? Math.round(votes.groom / total * 100) : 50;
+    document.getElementById('bar-bride').style.width = bPct + '%';
+    document.getElementById('bar-groom').style.width = gPct + '%';
+    document.getElementById('pct-bride').textContent = bPct + '%';
+    document.getElementById('pct-groom').textContent = gPct + '%';
+    if (total > 0) {
+      document.getElementById('poll-total').textContent = total + ' vote' + (total > 1 ? 's' : '') + ' so far! 🎉';
+    }
+    var voted = localStorage.getItem('weddingVoted');
+    if (voted) {
+      document.getElementById('poll-' + voted).classList.add('voted');
+    }
+  }
+})();
+
 </script>
 
 </body>
